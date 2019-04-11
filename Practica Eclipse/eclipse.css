@@ -1,13 +1,70 @@
 body{
   margin: 0 auto;
 }
+.estrella{
+  width: 2px;
+  height: 2px;
+  position: absolute;
+  border-radius: 100%;
+  animation-name: estrella, iluminacion;
+  animation-fill-mode: forwards, none;
+  animation-direction: normal, alternate;
+  animation-duration: 7s, 1s;
+  animation-iteration-count: 1, infinite;
+  animation-timing-function: linear,linear;
+  animation-delay: 3s, 2s;
+}
 
+.estrella1{
+  right: 10%;
+  top: 15%;
+}
+.estrella2{
+  right: 23%;
+  bottom: 15%;
+}
+.estrella3{
+  left: 14%;
+  bottom: 18%;
+}
+.estrella4{
+  left: 24%;
+  top: 29%;
+}
+.estrella5{
+  left: 34%;
+  top: 49%
+}
+.estrella6{
+  right: 29%;
+  top: 41%;
+}
+.estrella7{
+  right: 36%;
+  top: 21%;
+}
+.estrella8{
+  right: 15%;
+  top: 47%;
+}
+.estrella9{
+  left: 11%;
+  top: 15%;
+}
+.estrella10{
+  left: 25%;
+  bottom: 36%;
+}
 .nube{
-  background: #fff;
   width: 206px;
   height: 77px;
   border-radius: 51px;
+  background: #fff;
   position: absolute;
+  animation-name: nube;
+  animation-fill-mode: forwards;
+  animation-duration: 6s;
+  animation-timing-function: linear;
 }
 .nube1{
   left: 16%;
@@ -49,32 +106,114 @@ body{
   border-radius: 100%;
 }
 .cielo{
-  height: 50vh;
+  height: 100vh;
   width: 100%;
   position: relative;
   display: flex;
-  background:  #2363d6;
+  background:  #237bd6;
   align-items: center;
+  animation-name: cielo;
+  animation-duration: 8s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
 }
-
 
 .luna{
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   border-radius: 100%;
   position: absolute;
-  background-color: #ffc795;
-  right: -13%;
-
-
+  animation-name: luna, colorluna;
+  animation-duration: 8s ,8s;
+  animation-fill-mode: forwards,forwards;
+  animation-delay: 3s, 0s;
+  animation-timing-function: linear,linear;
 }
 .sol{
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   border-radius: 100%;
   margin: 0 auto;
   background-color: #eff1f0;
   box-shadow: 0px 0px 36px 20px #fdffd7;
+  animation-name: sol;
+  animation-duration: 8s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+  animation-delay: 4s;
+
+}
+@keyframes sol{
+  0%{
+    background-color: #eff1f0;
+    box-shadow: 0px 0px 36px 20px #fdffd7;
+  }
+
+  100%{
+    background-color: #e8663d;
+    box-shadow: 0px 0px 60px 5px #FF5722;
+
+  }
+}
+@keyframes iluminacion{
+  0%{
+    transform: scale(1);
+
+  }
+
+  100%{
+    transform: scale(2);
+  }
+}
+@keyframes estrella{
+  0%{
+    opacity: 0
+  }
+
+  100%{
+    opacity: 1;
+    background-color: #fff;
+    box-shadow: 0px 0px 3px 2px #fff;
+
+  }
+}
+@keyframes luna{
+  0%{
+    right: 20%;
+  }
+
+  100%{
+    right: 41.35%;
+    opacity: 1;
+  }
+}
+@keyframes colorluna{
+  0%{
+    background:  #237bd6;
+  }
+  100%{
+    background:  #000000;
+
+  }
+}
+
+@keyframes cielo{
+  0%{
+    background:  #237bd6;
+  }
+  100%{
+    background:  #000000;
+
+  }
+}
+@keyframes nube{
+  0%{
+    opacity: 1;
+
+  }
+  100%{
+    opacity: 0;
 
 
+  }
 }
