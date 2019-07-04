@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Animaciones de entrada y salida</title>
+  <style>
+    body{
+      display: flex;
+      /* height: 100vh; */
+      /* align-items: center;
+      justify-content: center; */
+      margin: 0;
+      font-family: Arial;
+      flex-direction: column;
+    }
+    .btn {
+      text-align: center;
+      padding: .6em .8em .8em;
+      background: lightgray;
+      border:none;
+      color: white;
+      margin: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: inset 0 -.2em rgba(0,0,0, .2);
+      outline: 0;
+      transition: .1s;
+      will-change: transform;
+    }
+    .btn:active{
+      transform: scale(.9);
+    }
+    .btn.primary{
+      background: #7dc800;
+    }
+    .btn.warning{
+      background: #ff463b;
+    }
+    .overlay{
+      background: rgba(0,0,0,.8);
+      position: fixed;
+      left: 0;
+      right: 0;
+      top:0;
+      bottom:0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 1.1s ease-in;
+      opacity: 0;
+      visibility: hidden;
+      cursor: pointer;
+    }
+    .overlay.active{
+      opacity: 1;
+      visibility: visible;
+    }
+    .close{
+      font-size: 14px;
+      color: #ffffff;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+
+    }
+    #open-modal{
+      cursor: pointer;
+    }
+    .modal{
+      /* width: 200px;
+      height: 200px; */
+      background: white;
+      width: 500px;
+      /* animation: name time estado; */
+      animation: modalOut .8s forwards ;
+      padding: 2em;
+      border-radius: .5em;
+      text-align: center;
+      position: relative;
+    }
+
+    @keyframes modalIn {
+      0%{
+        transform:translateY(-3000px);
+      }
+      60%{
+        transform: translateY(25px);
+      }
+      75%{
+        transform: translateY(-10px)
+      }
+      90%{
+        transform: translateY(5px);
+      }
+    }
+    @keyframes modalOut {
+      0%{
+        transform: translateY(5px);
+      }
+      60%{
+        transform: translateY(-10px)
+      }
+      75%{
+        transform: translateY(25px);
+      }
+      100%{
+        transform:translateY(-3000px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class='overlay' id='overlay' >
+    <div class="modal" id='modal'>
+      <h1>Atención!</h1>
+      <p>Estas a punto de crear una ventana de modal muy guay | cool | chevere</p>
+      <p>te gustó?</p>
+      <div class="modal-buttons">
+        <button class='btn primary' id='hide-modal'>Si, esta chido</button>
+        <button class='btn warning' id='warning'>No :( </button>
+
+      </div>
+      <button class="btn close warning" id='close'>X</button>
+    </div>
+  </div>
+  <img src="platzi.png" alt="" id='open-modal'>
+  <script>
+    const openModal = document.getElementById('open-modal')
+    const hideButton = document.getElementById('hide-modal')
+    const modal = document.getElementById('modal')
+    const overlay = document.getElementById('overlay')
+    const warning = document.getElementById('warning')
+    const close = document.getElementById('close')
+
+    hideButton.addEventListener('click', closeModal)
+    overlay.addEventListener('click', closeModal)
+    warning.addEventListener('click', closeModal)
+    close.addEventListener('click', closeModal)
+
+    function closeModal(){
+      modal.style.animation='modalOut .8s forwards';
+      overlay.classList.remove('active');
+    }
+
+    openModal.addEventListener('click' , ()=>{
+      modal.style.animation='modalIn .8s forwards'
+      overlay.classList.add('active');
+
+    })
+
+
+  </script>
+
+</body>
+</html>
