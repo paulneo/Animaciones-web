@@ -28,12 +28,15 @@
 .icon-envelope:before {
   content: "\e900";
 }
+
 .icon-phone:before {
   content: "\e901";
 }
+
 .icon-menu:before {
   content: "\e902";
 }
+
 .icon-close:before {
   content: "\e903";
 }
@@ -106,6 +109,41 @@ textarea:focus {
   background-color: #466173;
   background-image: url("../images/background.png");
   background-size: cover;
+}
+
+.portada.background.is-animated {
+  background-image: url("../images/team-platzi-azul.jpg");
+  background-repeat: no-repeat;
+  animation: background 15s linear infinite alternate;
+}
+
+@keyframes background {
+  0% {
+    background-size: 200%;
+    background-position: center;
+  }
+
+  20% {
+    background-position: right top;
+  }
+
+  40% {
+    background-size: 100%;
+    background-position: center;
+  }
+
+  60% {
+    background-position: left top;
+  }
+
+  80% {
+    background-position: left -100px;
+  }
+
+  100% {
+    background-position: right -100px;
+    background-size: 200%;
+  }
 }
 
 .button {
@@ -208,13 +246,16 @@ textarea:focus {
   min-height: 250px;
   transition: 0.3s;
 }
+
 .guitarra:hover {
   /* box-shadow: x y % color */
   box-shadow: 10px 10px 0 #ff3149;
 }
+
 .guitarra:nth-of-type(even):hover {
   box-shadow: -10px -10px 0 black;
 }
+
 .guitarra-name {
   font-size: 3em;
   margin: 0 0 0.2em;
@@ -233,6 +274,7 @@ textarea:focus {
   right: 0;
   bottom: 0;
 }
+
 .guitarra:nth-of-type(even) .guitarra-image {
   left: 0;
   right: initial;
@@ -248,6 +290,7 @@ textarea:focus {
   counter-increment: features;
   content: counter(features) ". ";
 }
+
 /* .guitarra.b {
   height: 190px;
 } */
@@ -266,6 +309,7 @@ textarea:focus {
 .contenedor-guitarra-a {
   padding-left: 20px;
 }
+
 .contenedor-guitarra-b {
   margin-left: 370px;
   position: relative;
@@ -322,6 +366,7 @@ textarea:focus {
 .col1 {
   margin-right: 15px;
 }
+
 .col2 {
   align-items: flex-start;
 }
@@ -390,60 +435,75 @@ textarea:focus {
   .tabla {
     margin: 50px 20px;
   }
+
   .tabla .contenedor {
     overflow: auto;
     border: 1px solid #273b47;
   }
+
   /* precios */
   /* portada */
   .titulo {
     font-size: 45px;
     margin-top: 30px;
   }
+
   .title-a {
     font-size: 18px;
   }
+
   .portada {
     height: auto;
   }
+
   .portada .button {
     margin-bottom: 30px;
     display: inline-block;
   }
+
   /* portada */
 
   /* guitarras */
   .video-demo-contenedor {
     margin-bottom: 30px;
   }
+
   .guitarras {
     text-align: center;
   }
+
   .izquierda,
   .derecha {
     float: none;
     position: static;
   }
+
   .title-b {
     margin: 0;
   }
+
   .guitarra li {
     list-style: none;
   }
+
   .guitarra.b {
     height: auto;
   }
+
   .contenedor-guitarra-b {
     position: static;
     margin: 0;
   }
+
   .contenedor-guitarra-a {
     padding: 0;
   }
+
   /* guitarras */
 }
 
 @media screen and (max-width: 767px) {
+
   /* footer */
   .footer .contenedor {
     display: block;
@@ -452,6 +512,7 @@ textarea:focus {
   .contacto {
     margin: 0 auto;
   }
+
   .formulario {
     display: block;
     margin: 0 auto;
@@ -462,21 +523,26 @@ textarea:focus {
     display: block;
     font-size: 16px;
   }
+
   .col1 {
     margin: 0;
   }
+
   input[type="text"],
   input[type="email"] {
     font-size: 16px;
     padding: 5px;
   }
+
   textarea {
     width: 100%;
   }
+
   input[type="radio"],
   input[type="checkbox"] {
     zoom: 1.5;
   }
+
   /* footer */
 }
 
@@ -510,25 +576,32 @@ textarea:focus {
 }
 
 @media screen and (max-width: 500px) {
+
   /* portada */
   .portada .button {
     display: block;
   }
+
   .precios .header .logotipo {
     margin: 50px 0;
   }
+
   .burguer-button {
     display: block;
   }
+
   .portada .contenedor {
     position: static;
   }
+
   .header {
     position: static;
   }
+
   .header .contenedor {
     position: static;
   }
+
   .menu {
     background: rgba(255, 60, 88, 0.8);
     position: fixed;
@@ -542,6 +615,7 @@ textarea:focus {
     align-items: center;
     transition: 0.3s;
   }
+
   .menu.active {
     left: 0;
   }
@@ -549,6 +623,7 @@ textarea:focus {
   .menu ul {
     flex: 1;
   }
+
   .menu li {
     display: block;
     margin: 0;
@@ -563,9 +638,11 @@ textarea:focus {
   .menu li:first-child {
     border-top: 1px solid white;
   }
+
   .portada {
     text-align: center;
   }
+
   .titulo {
     font-size: 30px;
   }
@@ -573,6 +650,7 @@ textarea:focus {
   .title {
     font-size: 16px;
   }
+
   /* portada */
 
   /* guitarras */
@@ -580,18 +658,22 @@ textarea:focus {
     width: 200px;
     /*height: auto;*/
   }
+
   .title-b {
     font-size: 30px;
   }
+
   .video-demo-contenedor {
     margin: 0 10px 30px 10px;
   }
+
   /* guitarras */
 
   /* footer */
   .col2 {
     align-items: stretch;
   }
+
   /* footer */
 }
 
